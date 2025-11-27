@@ -1,49 +1,28 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Line, Row, Text, InlineCode } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Alister",
+  lastName: "Gomes",
+  name: "Alister Gomes",
+  role: "Software Engineer",
+  avatar: "/images/avatar.jpg", // Replace this image in public/images folder
+  email: "2918333@vikes.csuohio.edu",
+  location: "America/New_York",
+  languages: ["English"],
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Sharing thoughts on Software Engineering, RPA, and AI.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/alister-gomes/",
     essential: true,
   },
   {
@@ -60,24 +39,16 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Software Engineer & RPA Specialist</>,
   featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    display: false, 
+    title: "Featured Project",
+    href: "/work/rpa-automation",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Alister, a Master's student in Software Engineering at <InlineCode>Cleveland State University</InlineCode> with over 3 years of experience engineering advanced RPA solutions and intelligent automation frameworks.
+    </>
   ),
 };
 
@@ -95,59 +66,60 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: `mailto:${person.email}`, 
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Alister is a Software Engineer based in Cleveland, Ohio, currently pursuing his Master of Science. 
+        With a strong background in automation, he has spearheaded the design of scalable RPA solutions 
+        and integrated AI capabilities to optimize complex workflows. He is passionate about constant 
+        improvement, leadership, and solving critical problems through code.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Novigo Solutions Pvt. Ltd.",
+        timeframe: "Aug 2021 - Dec 2024",
+        role: "Senior Software Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Spearheaded the design and implementation of scalable RPA solutions using UiPath, addressing complex automation challenges across various industries.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Enhanced automation frameworks by incorporating advanced scraping and in-built activities, resulting in a 50% increase in development efficiency.
+          </>,
+          <>
+            Collaborated with stakeholders to integrate Intelligent Process Automation (IPA), combining RPA with AI to achieve autonomous automation.
+          </>,
+          <>
+            Provided training and mentorship to junior developers, fostering a culture of continuous learning within the RPA team.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [], 
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Novigo Solutions Pvt. Ltd.",
+        timeframe: "Aug 2021 - (Previous Role)",
+        role: "Software Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Engineered advanced RPA solutions using UiPath Studio, enhancing operational efficiency and reducing manual intervention.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Collaborated with cross-functional teams to identify automation opportunities, leading to a 40% reduction in processing time for key workflows.
+          </>,
+          <>
+            Implemented high-security automation protocols utilizing auto-login functionality for locked screen operations to ensure data privacy.
+          </>,
+          <>
+            Leveraged UiPath's AI Center to incorporate machine learning models into automation workflows for intelligent decision-making.
           </>,
         ],
         images: [],
@@ -155,77 +127,66 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Cleveland State University",
+        description: (
+          <>
+            Master of Science in Software Engineering (Jan 2025 - Dec 2026)
+            <br />
+            Coursework: Software Project Management, QA, Data Mining, AI, Deep Learning, Quantum ML.
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "St. Joseph Engineering College",
+        description: (
+          <>
+            Bachelor of Engineering in Computer Science (July 2016 - Aug 2021)
+            <br />
+            Coursework included Web Development, Java, Python, Cloud Computing, and OS.
+          </>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
+        title: "Languages",
+        description: <>Proficient in core programming languages for diverse applications.</>,
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          { name: "Python" },
+          { name: "Java" },
+          { name: "JavaScript" },
+          { name: "TypeScript" },
+          { name: "SQL" },
         ],
       },
       {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
+        title: "RPA & Tools",
+        description: <>Specialized in Robotic Process Automation and workflow tools.</>,
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "UiPath" },
+          { name: "Power Automate" },
+          { name: "Blue Prism" },
+          { name: "Postman" },
+          { name: "Git" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+      },
+      {
+        title: "Web & Cloud",
+        description: <>Full-stack web development and cloud infrastructure.</>,
+        tags: [
+          { name: "React.js" },
+          { name: "Angular" },
+          { name: "AWS" },
+          { name: "RESTful APIs" },
+          { name: "Linux" },
         ],
       },
     ],
@@ -235,70 +196,23 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Insights & Updates",
+  description: `Read about my latest projects and technical insights.`,
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "Projects",
+  title: "My Work",
+  description: `Featured projects and automations by ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  title: "Gallery",
+  description: "A collection of images",
+  images: [], 
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
